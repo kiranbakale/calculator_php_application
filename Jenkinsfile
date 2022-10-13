@@ -7,6 +7,7 @@ pipeline {
     stage('verify version') {
       steps {
         sh 'php --version'
+      }
          steps {
         withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'sonar') {
             
