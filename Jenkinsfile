@@ -9,7 +9,7 @@ pipeline {
         sh 'php --version'
       }
          steps {
-        withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'sonar') {
+        withSonarQubeEnv(installationName: 'Sonarqube', credentialsId: 'Sonar-jenkins') {
             
        }
       }
