@@ -5,8 +5,8 @@ pipeline {
      environment {
         imageName = "php-cal-app"
         registryCredentials = "nexus"
-        registry = "http://52.90.184.36:8081/"
-        dockerImage = 'php-dock-image'
+        registry = "52.90.184.36:8084"
+        dockerImage = ''
      }
 
 
@@ -56,6 +56,33 @@ pipeline {
       }
     }
 
+    
+stage('Uploading to Nexus') {
+     steps{  
+         script {
+             docker.withRegistry( 'http://'+registry, registryCredentials ) {
+             dockerImage.push('latest')
+          }
+        }
+      }
+    }
+    
+    stage('stop previous containers') {
+         steps {
+            sh 'docker ps -f name=php-cal-app -q | xargs --no-run-if-empty docker container stop'
+            sh 'docker container ls -a -fname=php-cal-app -q | xargs -r docker container rm'
+         }
+       }
+      
+    stage('Docker Run') {
+       steps{
+         script {
+            dockerImage.run("-p 80:80 --rm --name php-cal-app")
+               
+            }
+         }
+      }    
+    }
   }
 
 }
