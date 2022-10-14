@@ -18,7 +18,7 @@
     <input type="submit" name="submit" value="calculate"> <br> <br>
     
 
-    <input type="text" value="<?php echo "Your age is ". $age->format("%y") ?>">
+    <input type="text" value="<?php echo "Your age is ". $age->format("%y")?>">
     </form>
     </p>
 
