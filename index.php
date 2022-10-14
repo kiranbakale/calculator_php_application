@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>calculator</title>
@@ -32,7 +31,7 @@ if(isset($_POST["submit"])){
     $current = $_POST["current"];
     
     $age=date_diff(date_create( $dob), date_create($current));
-
+}
 
 
 ?>
