@@ -1,7 +1,15 @@
+<html>
+<head>
+<title>How to put PHP in HTML- Date Example</title>
+</head>
+<body>
+<div>This is pure HTML message.</div>
+<div>Next, we’ll display today’s date and day by PHP!</div>
+<div>
 <?php
-$BirthDay = new DateTime('3.10.2021'); // Your birthday
-$Recent_Today = new Datetime(date('m.d.y'));
-$differnce = $Recent_Today->diff($BirthDay);
-printf(' Your age till date : %d years, %d month, %d days', $differnce->y, $differnce->m, $differnce->d);
-printf("\n");
+echo 'Today’s date is <b>' . date('Y/m/d') . '</b> and it’s a <b>'.date('l').'</b> today!';
 ?>
+</div>
+<div>Again, this is static HTML content.</div>
+</body>
+</html>
