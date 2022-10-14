@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>How to put PHP in HTML- Date Example</title>
+<title> PHP Example</title>
 </head>
 <body>
 
