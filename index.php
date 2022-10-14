@@ -1,41 +1,7 @@
-<html>
-<head>
-    <title>calculator</title>
-
-</head>
-<body>
-    <div>
-    <h1>calculator</h1>
-    </div>
-
-    <p>
-
-    <form action="index.php" method="post">
-    <label>Date for birth</label>
-    <input type="date" name="dob"> <br> <br>
-    <label>Current date</label>
-    <input type="date" name="current"> <br> <br>
-    <input type="submit" name="submit" value="calculate"> <br> <br>
-    
-
-    <input type="text" value="<?php echo "Your age is ". $age->format("%y")?>">
-    </form>
-    </p>
-
-    <p>
 <?php
-
-if(isset($_POST["submit"])){
-
-    $dob = $_POST["dob"];
-    $current = $_POST["current"];
-    
-    $age=date_diff(date_create( $dob), date_create($current));
-}
-
-
+$BirthDay = new DateTime('3.10.2021'); // Your birthday
+$Recent_Today = new Datetime(date('m.d.y'));
+$differnce = $Recent_Today->diff($BirthDay);
+printf(' Your age till date : %d years, %d month, %d days', $differnce->y, $differnce->m, $differnce->d);
+printf("\n");
 ?>
-
-    </p>
-</body>
-</html>
