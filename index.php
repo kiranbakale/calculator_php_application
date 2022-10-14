@@ -12,39 +12,28 @@
     <p>
 
     <form action="index.php" method="post">
-    <input name="v1"/>
-    <select name="action" id="">
-    <option value="plus">+</option>
-    <option value="minus">-</option>
+    <label>Date for birth</label>
+    <input type="date" name="dob"> <br> <br>
+    <label>Current date</label>
+    <input type="date" name="current"> <br> <br>
+    <input type="submit" name="submit" value="calculate"> <br> <br>
+    
 
-    </select>
-    <input name="v2"/>
-    <input type="submit" name="submit" value="Submit"/>
-
-
+    <input type="text" value="<?php echo "Your age is ". $age->format("%y") ?>" readonly>
     </form>
     </p>
 
     <p>
 <?php
 
-if(isset($_GET["submit"])){
+if(isset($_POST["submit"])){
 
-    $v1 = $_GET["v1"];
-    $v2 = $_GET["v2"];
+    $dob = $_POST["dob"];
+    $current = $_POST["current"];
     
-   if($_GET["action"]=="plus"){
-        $result= $v1+$v2;
-        echo " $v1 + $v2 ";
+    $age=date_diff(date_create( $dob), date_create($current));
 
-   } else{
-    $result= $v1-$v2;
-    echo " $v1 - $v2 ";
 
-   }
-   echo "= $result";
-
-}
 
 ?>
 
