@@ -1,6 +1,4 @@
-
 <!DOCTYPE html>
-<html>
 <head>
 <title> PHP Example</title>
 </head>
