@@ -5,7 +5,7 @@ pipeline {
      environment {
         imageName = "php-cal-app"
         registryCredentials = "nexus"
-        registry = "52.90.184.36:8084"
+        registry = "18.213.113.225:8084"
         dockerImage = ''
      }
 
@@ -25,9 +25,9 @@ pipeline {
       steps {
 
         withSonarQubeEnv(installationName: 'Sonarqube', credentialsId: 'Sonar-jenkins') {
-
+        sh "/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube/bin/sonar-scanner"
            
-
+  
        }
 
         sh 'php --version'
