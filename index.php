@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
-=======
-<!DOCTYPE>
->>>>>>> d26880d3974cd94670eea82603f1860d472a568a
 <html>
 <head>
 <title> PHP Example</title>
