@@ -25,7 +25,7 @@ pipeline {
       steps {
 
         withSonarQubeEnv(installationName: 'Sonarqube', credentialsId: 'Sonar-jenkins') {
-        sh "/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube/bin/sonar-scanner"
+        sh "/var/lib/jenkins/tools/sonar/bin/sonar-scanner"
            
   
        }
