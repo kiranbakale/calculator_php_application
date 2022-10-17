@@ -3,7 +3,7 @@
 <title> PHP Example</title>
 </head>
 <body>
-
+<h1>hello there</h1>
 <div>Next, we’ll display today’s date and day by PHP!</div>
 <div>
 <?php
