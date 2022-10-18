@@ -61,7 +61,8 @@ stage('Uploading to Nexus') {
      steps{  
          script {
              docker.withRegistry( 'http://'+registry, registryCredentials ) {
-             dockerImage.push('latest')
+             version = VersionNumber(versionNumberString: '1.${BUILDS_ALL_TIME}')
+             dockerImage.push(version)
           }
         }
       }
