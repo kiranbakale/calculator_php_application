@@ -5,7 +5,7 @@ pipeline {
      environment {
         imageName = "php-cal-app"
         registryCredentials = "nexus"
-        registry = "44.201.54.169:8084"
+        registry = "18.210.12.132:8084"
         dockerImage = ''
      }
 
